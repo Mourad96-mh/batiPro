@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Favicon = the BATIPRO logo mark (logo.jpeg): the "A" chevron with its orange
+       inner triangle, over the swoosh. Inverted onto the navy brand tile so it stays
+       legible in both light and dark browser tabs. Palette: globals.css :root. -->
+  <rect width="64" height="64" rx="13" fill="#0b2a5c"/>
+  <!-- "A" chevron (hollow, like the logo's navy mark) -->
+  <path d="M32 8 58 46H44L32 25 20 46H6L32 8Z" fill="#ffffff"/>
+  <!-- orange triangle nested in the opening -->
+  <path d="M32 28 40 46H24L32 28Z" fill="#f5820c"/>
+  <!-- swoosh under the mark -->
+  <path d="M12 55Q32 50 52 55" fill="none" stroke="#ffffff" stroke-width="3"
+        stroke-linecap="round"/>
+</svg>
