@@ -2,16 +2,23 @@
 
 import Link from "@/components/LocaleLink";
 import { useLang } from "@/lib/LangContext";
-import { COMPANY } from "@/lib/dictionary";
 import { Icon } from "@/components/Icon";
 import ContactButtons from "@/components/ContactButtons";
 import Reveal from "@/components/Reveal";
 import CardMedia from "@/components/CardMedia";
-import Coverage from "@/components/Coverage";
 import { serviceImages } from "@/lib/media";
 
 export default function HomeContent() {
   const { t } = useLang();
+
+  // Aperçu accueil : « Rénovation & réhabilitation » est retiré de la grille et
+  // « Entretien & maintenance » prend sa place (2ᵉ carte). Les deux services
+  // restent listés sur /services avec leur page dédiée.
+  const homeServices = (() => {
+    const list = t.services.filter((s) => s.id !== "renovation");
+    const i = list.findIndex((s) => s.id === "maintenance");
+    return i < 0 ? list : [list[0], list[i], ...list.slice(1).filter((s) => s.id !== "maintenance")];
+  })();
 
   // FAQPage schema, built from the active language for rich-result eligibility.
   const faqLd = {
@@ -54,25 +61,8 @@ export default function HomeContent() {
               <picture>
                 <source srcSet="/img/hero.webp" type="image/webp" />
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/img/hero.jpg" alt="Chantier de construction : grue et structure béton" width="1000" height="1331" fetchPriority="high" />
+                <img src="/img/hero.jpg" alt="Chantier BATIPRO : structure en béton armé et banches de coffrage en cours de montage" width="1000" height="530" fetchPriority="high" />
               </picture>
-            </div>
-            <div className="hero-card">
-              <div className="hero-card-head">
-                <span className="hc-ic"><Icon name="building" size={24} /></span>
-                <div>
-                  <p className="hc-brand">{COMPANY.legalName}</p>
-                  <p>{COMPANY.slogan.fr}</p>
-                </div>
-              </div>
-              <div className="hero-mini-list">
-                {t.services.slice(0, 4).map((s) => (
-                  <div className="hero-mini" key={s.id}>
-                    <span className="dot"><Icon name={s.icon} size={16} /></span>
-                    {s.title}
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </div>
@@ -99,7 +89,7 @@ export default function HomeContent() {
             <p>{t.servicesOverview.subtitle}</p>
           </Reveal>
           <div className="cards">
-            {t.services.map((s, i) => (
+            {homeServices.map((s, i) => (
               <Reveal className="card card--media" key={s.id} style={{ transitionDelay: `${i * 50}ms` }}>
                 <Link href={`/services/${s.slug}`} className="card-link">
                   <CardMedia icon={s.icon} img={serviceImages[s.slug]} alt={s.title} tone={i % 2 === 0 ? "navy" : "orange"} />
@@ -163,9 +153,6 @@ export default function HomeContent() {
         </div>
       </section>
 
-      {/* ZONES D'INTERVENTION */}
-      <Coverage tone="sand" />
-
       {/* FAQ */}
       <section className="section">
         <div className="container">
@@ -189,7 +176,7 @@ export default function HomeContent() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="section section--blue" style={{ paddingTop: 0 }}>
+      <section className="section section--blue">
         <div className="container final-cta">
           <Reveal>
             <h2>{t.finalCta.title}</h2>

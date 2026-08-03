@@ -35,15 +35,15 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" v
 
   <!-- wordmark -->
   <text x="78" y="315" font-family="Poppins, Arial, sans-serif" font-size="92" font-weight="800"
-        fill="#ffffff">BATIPRO<tspan fill="${ORANGE}">.</tspan></text>
+        fill="#ffffff">BATI<tspan fill="${ORANGE}">PRO</tspan></text>
   <text x="82" y="368" font-family="Poppins, Arial, sans-serif" font-size="40" font-weight="600"
         letter-spacing="8" fill="#c9d6ea">BTP CONSULTING</text>
 
   <!-- tagline -->
   <text x="80" y="470" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="500"
-        fill="#e7eef8">Construire avec rigueur, accompagner avec confiance.</text>
+        fill="#e7eef8">Construire aujourd'hui, bâtir la confiance de demain.</text>
   <text x="80" y="518" font-family="Inter, Arial, sans-serif" font-size="27" font-weight="400"
-        fill="#9db2d2">Kénitra · Rabat · Tanger · Meknès · Casablanca</text>
+        fill="#9db2d2">Construction · Rénovation · OPC · Maintenance — partout au Maroc</text>
 
   <!-- domain chip -->
   <rect x="80" y="556" width="290" height="46" rx="23" fill="#ffffff" fill-opacity="0.08"/>

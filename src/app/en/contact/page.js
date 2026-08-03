@@ -6,7 +6,7 @@ export const metadata = buildMetadata({
   frPath: "/contact",
   title: "Contact & free quote",
   description:
-    "Free quote from BATIPRO BTP CONSULTING: construction, renovation, fit-out and OPC in Kenitra, Rabat, Tangier, Meknes and Casablanca. Fast response.",
+    "Free quote from BATIPRO BTP CONSULTING: construction, renovation, fit-out and OPC throughout Morocco. Fast response.",
 });
 
 export default function Page() {

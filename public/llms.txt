@@ -2,30 +2,30 @@
 
 > BATIPRO BTP CONSULTING est une entreprise marocaine de construction et de conseil
 > en bâtiment (BTP). Elle réalise et accompagne des projets de construction neuve,
-> de rénovation, d'aménagement et de génie civil à Kénitra, Rabat, Tanger, Meknès
-> et Casablanca, de l'étude jusqu'à la réception des travaux, avec une exigence de
-> rigueur, de qualité et de sécurité.
+> de rénovation, d'aménagement et de génie civil partout au Maroc, de l'étude
+> jusqu'à la réception des travaux, avec une exigence de rigueur, de qualité et
+> de sécurité.
 
 ## En bref
 
 - **Nom légal :** BATIPRO BTP CONSULTING (marque : BATIPRO)
 - **Secteur :** Construction / BTP / génie civil / conseil et pilotage de chantier
-- **Zones desservies :** Kénitra (Rabat-Salé-Kénitra), Rabat (Rabat-Salé-Kénitra),
-  Tanger (Tanger-Tétouan-Al Hoceïma), Meknès (Fès-Meknès), Casablanca
-  (Casablanca-Settat) — Maroc
-- **Localisation :** Casablanca, région Casablanca-Settat, Maroc
+- **Zones desservies :** tout le Maroc (l'ensemble du territoire national)
+- **Siège social :** 30 rue Moulay Ahmed Loukili, app. 8 — chez Tek Équipement Hassan, Rabat, Maroc
+- **Bureau :** 63 rue Sebta et Amraoui, bureau 35, Kénitra, Maroc
 - **Directeur / fondateur :** Adil Sibari
 - **Langues :** français, anglais
 - **Slogan :** « Construire aujourd'hui, bâtir la confiance de demain »
 - **Site web :** https://batiprobtp.ma
-- **Téléphone / WhatsApp :** +212 661 29 31 24
+- **Téléphone :** +212 661 23 58 26 (principal) · +212 661 29 31 24 (secondaire) · +212 530 50 51 19 (bureau)
+- **WhatsApp :** +212 661 23 58 26
 - **Contact :** via le formulaire de devis — https://batiprobtp.ma/contact/
 
 ## Services (domaines d'intervention)
 
 BATIPRO couvre l'ensemble du cycle d'un projet de bâtiment sous une seule entreprise :
 
-- [Construction & gros œuvre](https://batiprobtp.ma/services/construction-gros-oeuvre/) — construction neuve, structure, gros œuvre, génie civil.
+- [Construction & gros œuvre](https://batiprobtp.ma/services/construction-gros-oeuvre/) — construction neuve, structure béton armé, dalle réticulée (plancher-caisson), gros œuvre, génie civil.
 - [Rénovation & réhabilitation](https://batiprobtp.ma/services/renovation-rehabilitation/) — remise à neuf, réhabilitation et mise à niveau de bâtiments existants.
 - [Aménagement intérieur & extérieur](https://batiprobtp.ma/services/amenagement-interieur-exterieur/) — second œuvre, finitions, aménagements intérieurs et extérieurs.
 - [OPC — suivi & coordination de chantier](https://batiprobtp.ma/services/opc-suivi-coordination-chantier/) — ordonnancement, pilotage et coordination des intervenants.
@@ -38,7 +38,6 @@ BATIPRO couvre l'ensemble du cycle d'un projet de bâtiment sous une seule entre
 - [Accueil](https://batiprobtp.ma/)
 - [L'entreprise / Qui sommes-nous](https://batiprobtp.ma/a-propos/)
 - [Tous les services](https://batiprobtp.ma/services/)
-- [Réalisations & savoir-faire](https://batiprobtp.ma/realisations/)
 - [Contact & devis gratuit](https://batiprobtp.ma/contact/)
 
 ## Versions linguistiques

@@ -49,11 +49,6 @@ export default function ServiceDetail({ id }) {
                 ))}
               </ul>
             </Reveal>
-            <Reveal>
-              <h2 style={{ marginTop: 36 }}>{t.serviceDetail.audienceTitle}</h2>
-              <p className="service-audience">{s.audience}</p>
-              <p className="service-areas">{t.serviceDetail.areasLine}</p>
-            </Reveal>
           </div>
 
           <aside className="service-aside">
@@ -74,7 +69,7 @@ export default function ServiceDetail({ id }) {
         </div>
       </section>
 
-      <section className="section section--blue" style={{ paddingTop: 0, background: "linear-gradient(150deg, var(--navy-900), var(--navy-700))" }}>
+      <section className="section section--blue" style={{ background: "linear-gradient(150deg, var(--navy-900), var(--navy-700))" }}>
         <div className="container final-cta">
           <Reveal>
             <h2>{t.finalCta.title}</h2>

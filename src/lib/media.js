@@ -14,13 +14,3 @@ export const serviceImages = {
   "qualite-securite-environnement": "svc-qse",
 };
 
-// Réalisations capability card icon → reused service photo (generic capability
-// illustration — not a claim of a specific completed project).
-export const capabilityImagesByIcon = {
-  building: "svc-gros-oeuvre",
-  renovate: "svc-renovation",
-  ruler: "svc-amenagement",
-  clipboard: "svc-opc",
-  wrench: "svc-entretien",
-  helmet: "svc-qse",
-};

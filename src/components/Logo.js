@@ -1,18 +1,20 @@
-// Logo client (lockup BATIPRO BTP CONSULTING), détouré depuis `logo.jpeg` par
-// `scripts/make-logo-assets.mjs` → PNG à fond transparent.
+import { COMPANY } from "@/lib/dictionary";
+
+// Le logo officiel du client, tel quel. `public/logo*.png` sont découpés dans
+// `match-logo.jpeg` par scripts/make-logo-assets.mjs — ne pas redessiner la
+// marque : toute retouche passe par une nouvelle image fournie par le client.
 //   - défaut  : couleurs d'origine, pour les fonds clairs (header)
-//   - `light` : marque inversée en blanc (orange conservé), pour les fonds sombres
-//               (footer navy) où le navy d'origine serait illisible
+//   - `light` : marque aplatie en blanc (orange conservé), pour le footer navy
+// Dimensions natives : 720×168 (cf. sortie du script) → à reporter ici si la
+// source change, sinon la réservation d'espace (CLS) devient fausse.
 export default function Logo({ light = false, className = "" }) {
   return (
-    // eslint-disable-next-line @next/next/no-img-element
     <img
       src={light ? "/logo-light.png" : "/logo.png"}
-      alt="BATIPRO BTP CONSULTING"
+      alt={COMPANY.legalName}
+      width="720"
+      height="168"
       className={`brand-logo ${className}`.trim()}
-      /* dimensions intrinsèques des PNG détourés (cf. make-logo-assets.mjs) */
-      width="480"
-      height="401"
     />
   );
 }
