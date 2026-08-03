@@ -18,9 +18,10 @@ export const COMPANY = {
   director: "Adil Sibari",
   // ✅ réels (client, 2026-08-02) — l'ordre fait foi : le premier est le numéro
   // principal, utilisé par les boutons « Appeler » (hero, barre mobile, JSON-LD).
+  // `label` est optionnel : sans lui, la page contact n'affiche que le numéro.
   phones: [
-    { number: "0661235826", label: { fr: "Numéro principal", en: "Main line" } },
-    { number: "0661293124", label: { fr: "Numéro secondaire", en: "Secondary line" } },
+    { number: "0661235826" },
+    { number: "0661293124" },
     { number: "0530505119", label: { fr: "Bureau", en: "Office" } },
   ],
   whatsapp: "212661235826",
@@ -416,7 +417,6 @@ export const dict = {
       mapLink: "Voir sur la carte",
       addressText:
         "Interventions partout au Maroc — nos équipes se déplacent sur l'ensemble du territoire.",
-      note: "L'adresse e-mail est provisoire et sera mise à jour prochainement.",
     },
     footer: {
       tagline:
@@ -757,7 +757,6 @@ export const dict = {
       mapLink: "View on map",
       addressText:
         "We work throughout Morocco — our teams travel across the whole country.",
-      note: "The e-mail address is provisional and will be updated soon.",
     },
     footer: {
       tagline:

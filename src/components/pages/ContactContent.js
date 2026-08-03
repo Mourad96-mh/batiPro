@@ -73,7 +73,9 @@ export default function ContactContent() {
                   <a key={p.number} className="phone-link" href={`tel:${telHref(p.number)}`}>
                     <span className="pl-ic"><Icon name="phone" size={16} /></span>
                     <span className="pl-text">
-                      <span className="pl-label">{p.label[lang] || p.label.fr}</span>
+                      {p.label && (
+                        <span className="pl-label">{p.label[lang] || p.label.fr}</span>
+                      )}
                       {telDisplay(p.number)}
                     </span>
                   </a>
@@ -124,7 +126,6 @@ export default function ContactContent() {
               <p className="contact-address contact-address--coverage">{t.contactPage.addressText}</p>
             </div>
 
-            <p className="contact-note">{t.contactPage.note}</p>
           </div>
         </div>
       </section>

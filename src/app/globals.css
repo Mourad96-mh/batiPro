@@ -10,6 +10,8 @@
   /* Vert officiel de la marque WhatsApp (#25D366) + variante foncée pour le survol */
   --whatsapp: #25d366;
   --whatsapp-600: #1ebe5b;
+  /* Bleu officiel de la marque Facebook */
+  --facebook: #1877f2;
   --steel-100: #eef2f7;
   --steel-200: #dce4ee;
   --ink-900: #16202e;
@@ -58,19 +60,9 @@ img { max-width: 100%; display: block; }
 .site-header { position: sticky; top: 0; z-index: 50; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(11, 42, 92, 0.08); }
 .header-inner { display: flex; align-items: center; justify-content: space-between; height: 82px; gap: 16px; }
 .brand { display: inline-flex; align-items: center; gap: 11px; }
-/* Lockup de marque : symbole + nom, alignés horizontalement (cf. croquis). */
-.brand-lockup { display: inline-flex; align-items: center; gap: 12px; }
-.brand-mark { height: 52px; width: auto; display: block; flex-shrink: 0; overflow: visible; }
-
-/* Wordmark */
-.wordmark { display: inline-flex; flex-direction: column; line-height: 1; }
-.wordmark .wm-main { font-family: var(--font-display); font-weight: 800; font-size: 1.5rem; letter-spacing: -0.02em; color: var(--navy-900); }
-.wordmark .wm-accent { color: var(--orange-500); }
-.wordmark .wm-sub { display: flex; align-items: center; gap: 5px; font-family: var(--font-display); font-weight: 600; font-size: 0.5rem; letter-spacing: 0.16em; color: var(--navy-900); margin-top: 4px; }
-.wordmark .wm-rule { flex: 1 1 6px; min-width: 6px; height: 1.5px; background: currentColor; }
-.wordmark--light .wm-main { color: var(--white); }
-.wordmark--light .wm-accent { color: var(--orange-300); }
-.wordmark--light .wm-sub { color: rgba(255,255,255,0.75); }
+/* Logo officiel (image fournie par le client) : la hauteur pilote, la largeur
+   suit le ratio natif 720×168. */
+.brand-logo { height: 52px; width: auto; display: block; flex-shrink: 0; }
 
 .main-nav { display: flex; align-items: center; gap: 4px; }
 .nav-link { font-family: var(--font-display); font-weight: 500; font-size: 0.94rem; color: var(--ink-600); padding: 9px 13px; border-radius: 9px; transition: color 0.15s, background 0.15s; }
@@ -78,12 +70,11 @@ img { max-width: 100%; display: block; }
 .nav-link.is-active { color: var(--navy-700); }
 .nav-cta { margin-left: 8px; padding: 10px 18px; }
 .header-actions { display: flex; align-items: center; gap: 12px; }
-/* Réseaux sociaux (en-tête + bas de page) — cf. components/SocialLinks.js */
+/* Réseaux sociaux (bas de page) — cf. components/SocialLinks.js. En haut de
+   page ils sont remplacés par le bouton flottant (.fab-facebook). */
 .social-links { display: inline-flex; align-items: center; gap: 6px; list-style: none; margin: 0; padding: 0; }
 .social-links a { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 999px; transition: background 0.15s, color 0.15s, transform 0.15s; }
 .social-links a:hover { transform: translateY(-1px); }
-.social-links--header a { color: var(--navy-700); background: var(--steel-100); }
-.social-links--header a:hover { color: var(--white); background: var(--navy-700); }
 .social-links--footer a { color: rgba(255,255,255,0.72); background: rgba(255,255,255,0.08); }
 .social-links--footer a:hover { color: var(--navy-900); background: var(--white); }
 
@@ -283,7 +274,6 @@ img { max-width: 100%; display: block; }
 .contact-meta a { display: flex; align-items: center; gap: 11px; color: var(--ink-600); font-size: 0.95rem; }
 .contact-meta a:hover { color: var(--navy-700); }
 .contact-meta .cm-ic { color: var(--orange-500); flex-shrink: 0; }
-.contact-note { font-size: 0.82rem; color: var(--ink-400); font-style: italic; padding: 0 4px; }
 
 /* Floating action buttons */
 .fab-stack { display: flex; position: fixed; right: 20px; bottom: calc(20px + env(safe-area-inset-bottom)); z-index: 60; flex-direction: column; gap: 12px; }
@@ -291,15 +281,14 @@ img { max-width: 100%; display: block; }
 .fab:active { transform: scale(0.93); }
 .fab-whats { background: var(--whatsapp); }
 .fab-call { background: var(--navy-700); }
+.fab-facebook { background: var(--facebook); }
 
 /* Footer */
 .site-footer { background: var(--navy-900); color: rgba(255,255,255,0.78); padding-top: 56px; }
 .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1.4fr 1.2fr; gap: 36px; padding-bottom: 40px; }
 .brand--footer { display: inline-flex; align-items: center; transition: opacity 0.18s ease; }
 .brand--footer:hover { opacity: 0.85; }
-.brand-logo--footer .brand-mark { height: 60px; }
-.brand-logo--footer .wm-main { font-size: 1.75rem; }
-.brand-logo--footer .wm-sub { font-size: 0.58rem; }
+.brand-logo--footer { height: 58px; }
 .footer-brand p { margin-top: 14px; max-width: 28em; font-size: 0.93rem; }
 .footer-areas { display: flex; align-items: flex-start; gap: 9px; color: var(--orange-300); font-family: var(--font-display); font-weight: 600; font-size: 0.9rem; }
 .footer-areas svg { flex-shrink: 0; margin-top: 3px; }
@@ -360,19 +349,16 @@ img { max-width: 100%; display: block; }
   .nav-link { padding: 13px 12px; border-radius: 10px; }
   .nav-cta { margin: 8px 0 0; justify-content: center; }
   .burger { display: flex; }
-  .site-footer { padding-bottom: 86px; }
+  /* Dégage le bas de page : arrivé en bas, la pile de boutons flottants
+     (réseaux + WhatsApp + appel, ~200px de haut) ne doit recouvrir aucun texte. */
+  .site-footer { padding-bottom: 200px; }
   .stat + .stat::before { display: none; }
   .header-inner { gap: 10px; }
-  .wordmark .wm-main { font-size: 1.3rem; }
-  .wordmark .wm-sub { font-size: 0.44rem; letter-spacing: 0.14em; gap: 4px; }
-  .brand-mark { height: 42px; }
-  .brand-lockup { gap: 9px; }
+  .brand-logo { height: 42px; }
   .header-actions { gap: 8px; }
 }
 @media (max-width: 560px) {
-  /* En-tête serré (logo + langue + burger) : les réseaux restent accessibles
-     en bas de page, on les retire donc de la barre. */
-  .social-links--header { display: none; }
+  .brand-logo { height: 38px; }
   .cards { grid-template-columns: 1fr; }
   .why-grid { grid-template-columns: 1fr; }
   .stats-grid { grid-template-columns: 1fr; gap: 22px; }

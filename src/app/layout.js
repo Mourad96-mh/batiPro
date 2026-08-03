@@ -18,7 +18,7 @@ const jsonLd = {
   email: COMPANY.email,
   telephone: telHref(COMPANY.phones[0].number),
   image: `${SITE}/og.jpg`,
-  logo: `${SITE}/logo.svg`,
+  logo: `${SITE}/logo.png`,
   slogan: COMPANY.slogan.fr,
   // Profils officiels : aide Google à rattacher l'entité au bon compte social.
   sameAs: COMPANY.social.map((s) => s.url),
@@ -80,6 +80,10 @@ export const metadata = {
     "BATIPRO BTP CONSULTING : construction, rénovation, aménagement, OPC et maintenance partout au Maroc. Devis gratuit.",
   applicationName: "BATIPRO BTP CONSULTING",
   alternates: { canonical: "/", languages: altLanguages("/") },
+  // Propriété Google Search Console (méthode « balise HTML »). Déclarée ici, donc
+  // présente sur toutes les pages : ne pas la retirer, Google revérifie
+  // périodiquement et la propriété serait perdue.
+  verification: { google: "Q14gyDAjtsI6TsuDxSOBMP-Zk2HdS0SV458m9d9BwcU" },
   keywords: [
     "BATIPRO", "BTP Maroc", "entreprise de construction Maroc",
     "travaux de bâtiment", "rénovation", "gros œuvre", "OPC chantier",

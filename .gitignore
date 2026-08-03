@@ -9,6 +9,8 @@
 
 # production
 /build
+# Archive du site prête à téléverser (régénérée à la demande depuis out/).
+/batipro-site.zip
 
 # Fontes Poppins téléchargées à la demande par scripts/make-logo-svg.mjs.
 /.fonts
