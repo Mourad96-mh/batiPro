@@ -2,12 +2,11 @@
 
 import { useState } from "react";
 import { useLang } from "@/lib/LangContext";
-import { COMPANY } from "@/lib/dictionary";
+import { COMPANY, telHref, telDisplay } from "@/lib/dictionary";
 import { Icon } from "@/components/Icon";
-import Coverage from "@/components/Coverage";
 
 export default function ContactContent() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const [form, setForm] = useState({ name: "", phone: "", service: "", message: "" });
 
   const update = (k) => (e) => setForm({ ...form, [k]: e.target.value });
@@ -71,9 +70,12 @@ export default function ContactContent() {
               <h3><span className="cb-ic"><Icon name="phone" size={18} /></span>{t.contactPage.callTitle}</h3>
               <div className="phone-list">
                 {COMPANY.phones.map((p) => (
-                  <a key={p} className="phone-link" href={`tel:+212${p.slice(1)}`}>
+                  <a key={p.number} className="phone-link" href={`tel:${telHref(p.number)}`}>
                     <span className="pl-ic"><Icon name="phone" size={16} /></span>
-                    {p.replace(/(\d{2})(?=\d)/g, "$1 ").trim()}
+                    <span className="pl-text">
+                      <span className="pl-label">{p.label[lang] || p.label.fr}</span>
+                      {telDisplay(p.number)}
+                    </span>
                   </a>
                 ))}
               </div>
@@ -93,7 +95,33 @@ export default function ContactContent() {
 
             <div className="contact-block">
               <h3><span className="cb-ic"><Icon name="pin" size={18} /></span>{t.contactPage.addressTitle}</h3>
-              <p className="contact-address">{t.contactPage.addressText}</p>
+              <div className="address-list">
+                <div>
+                  <p className="addr-label">{t.contactPage.hqLabel}</p>
+                  <p className="contact-address">
+                    {COMPANY.headOffice.street}
+                    <br />
+                    {COMPANY.headOffice.locality}, {COMPANY.country}
+                  </p>
+                </div>
+                <div>
+                  <p className="addr-label">{t.contactPage.officeLabel}</p>
+                  <p className="contact-address">
+                    {COMPANY.office.street}
+                    <br />
+                    {COMPANY.office.locality}, {COMPANY.country}
+                  </p>
+                  <a
+                    className="addr-map"
+                    href={COMPANY.mapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Icon name="pin" size={14} /> {t.contactPage.mapLink}
+                  </a>
+                </div>
+              </div>
+              <p className="contact-address contact-address--coverage">{t.contactPage.addressText}</p>
             </div>
 
             <p className="contact-note">{t.contactPage.note}</p>
@@ -101,7 +129,6 @@ export default function ContactContent() {
         </div>
       </section>
 
-      <Coverage tone="sand" />
     </>
   );
 }

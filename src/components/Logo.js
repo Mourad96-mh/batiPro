@@ -1,18 +1,15 @@
-// Logo client (lockup BATIPRO BTP CONSULTING), détouré depuis `logo.jpeg` par
-// `scripts/make-logo-assets.mjs` → PNG à fond transparent.
-//   - défaut  : couleurs d'origine, pour les fonds clairs (header)
-//   - `light` : marque inversée en blanc (orange conservé), pour les fonds sombres
-//               (footer navy) où le navy d'origine serait illisible
+import BrandMark from "./BrandMark";
+import Wordmark from "./Wordmark";
+
+// Lockup horizontal BATIPRO : symbole à gauche, nom à droite (cf. croquis client).
+// Tout est vectoriel/texte — net à toute taille, et le nom hérite de Poppins.
+//   - défaut  : navy + orange, pour les fonds clairs (header)
+//   - `light` : marque inversée en blanc, pour les fonds sombres (footer navy)
 export default function Logo({ light = false, className = "" }) {
   return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src={light ? "/logo-light.png" : "/logo.png"}
-      alt="BATIPRO BTP CONSULTING"
-      className={`brand-logo ${className}`.trim()}
-      /* dimensions intrinsèques des PNG détourés (cf. make-logo-assets.mjs) */
-      width="480"
-      height="401"
-    />
+    <span className={`brand-lockup ${className}`.trim()}>
+      <BrandMark light={light} />
+      <Wordmark light={light} />
+    </span>
   );
 }

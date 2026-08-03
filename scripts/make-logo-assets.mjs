@@ -1,5 +1,5 @@
-// Génère les déclinaisons du logo à partir de `logo.jpeg` (fourni par le client,
-// fond blanc opaque) :
+// Génère les déclinaisons du logo à partir de `last-logo.jpeg` (dernière version
+// fournie par le client, fond blanc opaque) :
 //
 //   public/logo.png / .webp        → fond transparent, couleurs d'origine (fonds clairs)
 //   public/logo-light.png / .webp  → fond transparent + marque inversée en blanc,
@@ -9,11 +9,11 @@
 // Rendue transparente telle quelle sur le footer navy, « BATI » et « BTP CONSULTING »
 // deviennent illisibles. On inverse donc la luminance des pixels non-orange.
 //
-// Usage : node scripts/make-logo-assets.mjs   (relancer si le client fournit un
-// nouveau logo.jpeg — c'est la seule source).
+// Usage : node scripts/make-logo-assets.mjs   (relancer et mettre `SRC` à jour si
+// le client fournit une nouvelle version — c'est la seule source).
 import sharp from "sharp";
 
-const SRC = "logo.jpeg";
+const SRC = "last-logo.jpeg";
 const WIDTH = 480; // ~4× la taille d'affichage max (78px de haut) → net en hi-dpi
 
 // Un pixel est considéré comme fond si ses 3 canaux sont quasi blancs.
@@ -35,15 +35,15 @@ function build({ light }) {
     else if (min > RAMP) a = Math.round(((BG_MIN - min) * 255) / (BG_MIN - RAMP));
 
     if (light) {
-      // L'orange de la marque est préservé ; tout le reste (navy, gris, dégradés
-      // des immeubles) est inversé en clair pour ressortir sur fond sombre.
+      // L'orange de la marque est préservé ; tout le reste (navy, y compris ses
+      // dégradés) devient blanc franc pour ressortir sur fond sombre. On aplatit
+      // plutôt que d'inverser la luminance : le dégradé navy donnerait des gris
+      // ternes. L'alpha ci-dessus suffit à rendre les bords propres.
       const isOrange = r > 170 && b < 140 && r - b > 60 && g > 60;
       if (!isOrange) {
-        const L = 0.2126 * r + 0.7152 * g + 0.0722 * b;
-        const v = Math.max(120, Math.min(255, 255 - L * 0.72));
-        r = Math.round(v * 0.96);
-        g = Math.round(v * 0.98);
-        b = Math.round(v);
+        r = 255;
+        g = 255;
+        b = 255;
       }
     }
 

@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useLang } from "@/lib/LangContext";
 import LocaleLink from "@/components/LocaleLink";
 import Logo from "@/components/Logo";
+import SocialLinks from "@/components/SocialLinks";
 
 export default function Header() {
   const { lang, t, localePath, frHref, enHref } = useLang();
@@ -16,7 +17,6 @@ export default function Header() {
     { href: "/", label: t.nav.home },
     { href: "/a-propos", label: t.nav.about },
     { href: "/services", label: t.nav.services },
-    { href: "/realisations", label: t.nav.realisations },
     { href: "/contact", label: t.nav.contact },
   ];
 
@@ -44,6 +44,8 @@ export default function Header() {
         </nav>
 
         <div className="header-actions">
+          <SocialLinks variant="header" />
+
           <div className="lang-switch" role="group" aria-label="Language">
             <Link
               href={frHref}

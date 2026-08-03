@@ -10,6 +10,9 @@
 # production
 /build
 
+# Fontes Poppins téléchargées à la demande par scripts/make-logo-svg.mjs.
+/.fonts
+
 # Originaux stock (Pexels) servant d'entrée à scripts/make-webp.mjs.
 # Les dérivés réellement servis par le site sont versionnés dans public/img/.
 /assets-src

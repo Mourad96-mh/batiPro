@@ -7,7 +7,7 @@ export const metadata = buildMetadata({
   absoluteTitle: "BATIPRO BTP CONSULTING — Construction & building in Morocco",
   title: "Home",
   description:
-    "BATIPRO BTP CONSULTING: construction, renovation, fit-out, OPC and maintenance in Kenitra, Rabat, Tangier, Meknes and Casablanca. Free quote.",
+    "BATIPRO BTP CONSULTING: construction, renovation, fit-out, OPC and maintenance throughout Morocco. Free quote.",
 });
 
 export default function Page() {

@@ -12,18 +12,15 @@ mkdirSync(OUT, { recursive: true });
 
 // [source file, output basename, target width]
 const CONFIG = [
-  ["crane-hero.jpg",        "hero",            1000],
-  ["steelbeams.jpg",        "svc-gros-oeuvre",  800],
+  ["home-hero.jpg",         "hero",            1000],
+  ["gros-oeuvre.jpg",       "svc-gros-oeuvre",  800],
   ["scaffolding.jpg",       "svc-renovation",   800],
   ["interior.jpg",          "svc-amenagement",  800],
   ["onsite-blueprint.jpg",  "svc-opc",          800],
   ["engineer-drawings.jpg", "svc-assistance",   800],
-  ["electrical.jpg",        "svc-entretien",    800],
-  ["safetygear.jpg",        "svc-qse",          800],
+  ["maintenance.jpg",       "svc-entretien",    800],
+  ["qse.jpg",               "svc-qse",          800],
   ["architects-plans.jpg",  "about",           1000],
-  ["urbansite.jpg",         "real-1",           800],
-  ["towercranes.jpg",       "real-2",           800],
-  ["craneblue.jpg",         "real-3",           800],
 ];
 
 let total = 0;

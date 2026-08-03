@@ -1,6 +1,6 @@
 import "./globals.css";
 import { LangProvider } from "@/lib/LangContext";
-import { COMPANY, dict, areaServedLd, cityList } from "@/lib/dictionary";
+import { COMPANY, dict, areaServedLd, coverageIn, telHref } from "@/lib/dictionary";
 import { altLanguages } from "@/lib/seo";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -16,17 +16,26 @@ const jsonLd = {
   alternateName: COMPANY.name,
   url: SITE,
   email: COMPANY.email,
-  telephone: `+212${COMPANY.phones[0].slice(1)}`,
+  telephone: telHref(COMPANY.phones[0].number),
   image: `${SITE}/og.jpg`,
-  logo: `${SITE}/logo.png`,
+  logo: `${SITE}/logo.svg`,
   slogan: COMPANY.slogan.fr,
-  description: `Entreprise marocaine de construction, rénovation, aménagement, pilotage de chantier (OPC), assistance technique, maintenance et management QSE. Interventions à ${cityList("fr")}.`,
+  // Profils officiels : aide Google à rattacher l'entité au bon compte social.
+  sameAs: COMPANY.social.map((s) => s.url),
+  description: `Entreprise marocaine de construction, rénovation, aménagement, pilotage de chantier (OPC), assistance technique, maintenance et management QSE. Interventions ${coverageIn("fr")}.`,
   priceRange: "$$",
   address: {
     "@type": "PostalAddress",
-    addressLocality: COMPANY.addressLocality,
-    addressRegion: COMPANY.region,
+    streetAddress: COMPANY.office.street,
+    addressLocality: COMPANY.office.locality,
+    addressRegion: COMPANY.office.region,
     addressCountry: "MA",
+  },
+  hasMap: COMPANY.mapsUrl,
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: COMPANY.office.geo.lat,
+    longitude: COMPANY.office.geo.lng,
   },
   areaServed: areaServedLd("fr"),
   founder: { "@type": "Person", name: COMPANY.director },
@@ -34,8 +43,15 @@ const jsonLd = {
   contactPoint: [
     {
       "@type": "ContactPoint",
-      telephone: `+212${COMPANY.phones[0].slice(1)}`,
+      telephone: telHref(COMPANY.phones[0].number),
       contactType: "customer service",
+      areaServed: "MA",
+      availableLanguage: ["fr", "en"],
+    },
+    {
+      "@type": "ContactPoint",
+      telephone: telHref(COMPANY.phones[2].number),
+      contactType: "sales",
       areaServed: "MA",
       availableLanguage: ["fr", "en"],
     },
@@ -61,7 +77,7 @@ export const metadata = {
     template: "%s | BATIPRO BTP CONSULTING",
   },
   description:
-    "BATIPRO BTP CONSULTING : construction, rénovation, aménagement, OPC et maintenance à Kénitra, Rabat, Tanger, Meknès et Casablanca. Devis gratuit.",
+    "BATIPRO BTP CONSULTING : construction, rénovation, aménagement, OPC et maintenance partout au Maroc. Devis gratuit.",
   applicationName: "BATIPRO BTP CONSULTING",
   alternates: { canonical: "/", languages: altLanguages("/") },
   keywords: [
@@ -69,15 +85,16 @@ export const metadata = {
     "travaux de bâtiment", "rénovation", "gros œuvre", "OPC chantier",
     "coordination de chantier", "génie civil", "aménagement", "maintenance bâtiment",
     "QSE",
-    "entreprise de construction Kénitra", "entreprise de construction Rabat",
-    "entreprise de construction Tanger", "entreprise de construction Meknès",
-    "entreprise de construction Casablanca",
-    "travaux de rénovation Rabat", "société BTP Kénitra", "entreprise BTP Tanger",
+    "dalle réticulée", "dalle réticulée Maroc", "plancher caisson",
+    "dalle nervurée béton armé", "entreprise dalle réticulée",
+    "entreprise de construction Maroc", "société BTP Maroc",
+    "travaux de rénovation Maroc", "entreprise de bâtiment Maroc",
+    "construction partout au Maroc",
   ],
   openGraph: {
     title: "BATIPRO BTP CONSULTING — Construction & bâtiment au Maroc",
     description:
-      "Construction, rénovation, aménagement et accompagnement technique de vos projets de bâtiment à Kénitra, Rabat, Tanger, Meknès et Casablanca. Construire avec rigueur, accompagner avec confiance.",
+      "Construction, rénovation, aménagement et accompagnement technique de vos projets de bâtiment partout au Maroc. Construire aujourd'hui, bâtir la confiance de demain.",
     type: "website",
     locale: "fr_MA",
     url: "/",
@@ -95,7 +112,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "BATIPRO BTP CONSULTING — Construction & bâtiment au Maroc",
     description:
-      "Construction, rénovation, aménagement, OPC, maintenance et QSE à Kénitra, Rabat, Tanger, Meknès et Casablanca. Devis gratuit.",
+      "Construction, rénovation, aménagement, OPC, maintenance et QSE partout au Maroc. Devis gratuit.",
     images: ["/og.jpg"],
   },
 };

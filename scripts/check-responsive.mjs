@@ -17,7 +17,7 @@ const BASE = "http://localhost:3000";
 
 const PAGES = [
   "/", "/a-propos/", "/services/", "/services/construction-gros-oeuvre/",
-  "/realisations/", "/contact/", "/en/", "/en/services/",
+  "/contact/", "/en/", "/en/services/",
 ];
 const WIDTHS = [320, 360, 375, 390, 414, 480, 560, 640, 768, 820, 981, 1024, 1280, 1440, 1920];
 

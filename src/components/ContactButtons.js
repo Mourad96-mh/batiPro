@@ -1,19 +1,19 @@
 "use client";
 
 import { useLang } from "@/lib/LangContext";
-import { COMPANY } from "@/lib/dictionary";
+import { COMPANY, telHref } from "@/lib/dictionary";
 import { Icon } from "./Icon";
 
 export default function ContactButtons({ variant = "default" }) {
   const { t } = useLang();
-  const primary = COMPANY.phones[0];
+  const primary = COMPANY.phones[0].number;
   const waMsg = encodeURIComponent(
     "Bonjour BATIPRO, je souhaite un devis. / Hello BATIPRO, I'd like a quote."
   );
 
   return (
     <div className={`cta-row cta-row--${variant}`}>
-      <a className="btn btn-primary" href={`tel:+212${primary.slice(1)}`}>
+      <a className="btn btn-primary" href={`tel:${telHref(primary)}`}>
         <Icon name="phone" size={18} />
         {t.hero.ctaCall}
       </a>

@@ -7,7 +7,12 @@ export default function Wordmark({ light = false, className = "" }) {
       <span className="wm-main">
         BATI<span className="wm-accent">PRO</span>
       </span>
-      <span className="wm-sub">BTP CONSULTING</span>
+      {/* filets de part et d'autre du descripteur, comme sur le logo */}
+      <span className="wm-sub">
+        <i className="wm-rule" aria-hidden="true" />
+        BTP CONSULTING
+        <i className="wm-rule" aria-hidden="true" />
+      </span>
     </span>
   );
 }

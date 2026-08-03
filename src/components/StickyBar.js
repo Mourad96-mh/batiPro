@@ -1,12 +1,12 @@
 "use client";
 
 import { useLang } from "@/lib/LangContext";
-import { COMPANY } from "@/lib/dictionary";
+import { COMPANY, telHref } from "@/lib/dictionary";
 import { Icon } from "./Icon";
 
 export default function StickyBar() {
   const { t } = useLang();
-  const primary = COMPANY.phones[0];
+  const primary = COMPANY.phones[0].number;
   const waMsg = encodeURIComponent(
     "Bonjour BATIPRO, je souhaite un devis. / Hello BATIPRO, I'd like a quote."
   );
@@ -24,7 +24,7 @@ export default function StickyBar() {
       </a>
       <a
         className="fab fab-call"
-        href={`tel:+212${primary.slice(1)}`}
+        href={`tel:${telHref(primary)}`}
         aria-label={t.hero.ctaCall}
       >
         <Icon name="phone" size={24} />

@@ -91,7 +91,7 @@ export default function ServicesContent() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="section section--blue" style={{ paddingTop: 0 }}>
+      <section className="section section--blue">
         <div className="container final-cta">
           <Reveal>
             <h2>{t.finalCta.title}</h2>

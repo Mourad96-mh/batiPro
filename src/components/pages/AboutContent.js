@@ -37,7 +37,7 @@ export default function AboutContent() {
       </section>
 
       {/* VALUES */}
-      <section className="section section--sand" style={{ paddingTop: 0, background: "var(--steel-100)" }}>
+      <section className="section section--sand" style={{ background: "var(--steel-100)" }}>
         <div className="container">
           <Reveal className="section-head center">
             <h2>{a.valuesTitle}</h2>
@@ -63,28 +63,6 @@ export default function AboutContent() {
           {a.engagement.map((p, i) => (
             <Reveal as="p" key={i} className="prose-p prose-p--onDark">{p}</Reveal>
           ))}
-        </div>
-      </section>
-
-      {/* MOT DU DIRECTEUR */}
-      <section className="section">
-        <div className="container director-block">
-          <Reveal className="director-card">
-            <div className="director-head">
-              <span className="director-avatar"><Icon name="handshake" size={30} /></span>
-              <div>
-                <span className="eyebrow">{a.directorTitle}</span>
-                <h2>{a.directorName}</h2>
-                <p className="director-role">{a.directorRole}</p>
-              </div>
-            </div>
-            <div className="director-text">
-              {a.director.map((p, i) => (
-                <p key={i}>{p}</p>
-              ))}
-            </div>
-            <p className="director-sign">{a.directorName}</p>
-          </Reveal>
         </div>
       </section>
 
